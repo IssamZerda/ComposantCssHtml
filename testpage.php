@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="test"></div>
+    <div class="test"><?php echo "test";?></div>
 </body>
 </html>
