@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Hover Animation</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+	<style>
+		html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.btn__circle {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #282936;
+  border-radius: 50px;
+  transition: 0.45s;
+}
+
+.btn:hover .btn__circle {
+  width: 100%;
+}
+
+.btn__icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  font-size: 30px;
+  color: #fff;
+  transform: translateY(-50%);
+  transition: 0.45s;
+}
+
+.btn:hover .btn__icon {
+  left: 24px;
+}
+
+.btn__icon::before {
+  position: absolute;
+  content: "";
+  top: 11px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.45s;
+}
+
+.btn:hover .btn__icon::before {
+  width: 13px;
+}
+
+.btn__text {
+  position: absolute;
+  left: 60px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #282936;
+  transition: 0.45s;
+}
+
+.btn:hover .btn__text {
+  color: #fff;
+}
+
+	</style>
+  </head>
+  <body>
+	<p>Call to action 005 Réf: CTC-005</p> 
+    <section class="section">
+      <button class="btn">
+        <span class="btn__circle">
+          <span class="btn__icon material-icons"> keyboard_arrow_right </span>
+        </span>
+        <span class="btn__text">Learn More</span>
+      </button>
+    </section>
+  </body>
