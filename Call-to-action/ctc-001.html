@@ -4,68 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scroll Down Réf: SCD-001</title>
+    <title>Call to action Réf: CTC-001</title>
     <style>
-        body {
-            background:#0b1d2a;
-            color: #fff;
-            }
+       body {
+ background-color: #cad4db !important;
+ margin: 20vh 20vw;
+}
 
-            .arrows {
-                width: 60px;
-                height: 72px;
-                position: absolute;
-                left: 50%;
-                margin-left: -30px;
-                bottom: 20px;
-            }
+[class*="btn-arrow-hvr"] {
+ text-align: center;
+ margin: 25px 0;
+}
 
-            .arrows path {
-                stroke: #2994D1;
-                fill: transparent;
-                stroke-width: 1px;	
-                animation: arrow 2s infinite;
-                -webkit-animation: arrow 2s infinite; 
-            }
+[class*="btn-arrow-hvr"] a {
+ position: relative;
+ display: inline-block;
+ padding: .8em 1em .6em 1em;
+ border-style: solid;
+ border-width: 2px;
+ font-family: 'Catamaran', sans-serif;
+ font-size: 20px;
+ font-weight: 600;
+ line-height: 1;
+ text-decoration: none;
+ text-transform: uppercase;
+ transition: all .2s;
+}
 
-            @keyframes arrow
-            {
-            0% {opacity:0}
-            40% {opacity:1}
-            80% {opacity:0}
-            100% {opacity:0}
-            }
+[class*="btn-arrow-hvr"] a:hover {
+ padding: .8em 2em .6em 1em;
+}
 
-            @-webkit-keyframes arrow /*Safari and Chrome*/
-            {
-            0% {opacity:0}
-            40% {opacity:1}
-            80% {opacity:0}
-            100% {opacity:0}
-            }
+[class*="btn-arrow-hvr"] a::after {
+ position: absolute;
+ font-family: FontAwesome;
+ content: "\f105";
+ display: inline-block;
+ font-size: 28px;
+ line-height: .5;
+ width: 28px;
+ text-align: center;
+ margin-left: -1em;
+ opacity: 0;
+ transition: all .2s;
+}
 
-            .arrows path.a1 {
-                animation-delay:-1s;
-                -webkit-animation-delay:-1s; /* Safari 和 Chrome */
-            }
+[class*="btn-arrow-hvr"] a:hover::after {
+ margin-left: .1em;
+ opacity: 1;
+}
 
-            .arrows path.a2 {
-                animation-delay:-0.5s; 
-                -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
-            }
+.btn-arrow-hvr-white a {
+ color: #fff;
+ background-color: transparent;
+ border-color: #fff;
+}
 
-            .arrows path.a3 {	
-                animation-delay:0s;
-                -webkit-animation-delay:0s; /* Safari 和 Chrome */
-            }
+.btn-arrow-hvr-white a:hover {
+ background-color: rgba(255, 255, 255, .2);
+ border-color: transparent;
+}
+
+.btn-arrow-hvr-c1 a {
+ color: #4E7187;
+ background-color: transparent;
+ border-color: #4E7187;
+}
+
+.btn-arrow-hvr-c1 a:hover {
+ background-color: rgba(0, 0, 0, .05);
+ border-color: transparent;
+}
+
     </style>
 </head>
 <body> 
-    <p>Scroll Down 001 Réf: SCD-001</p>
-    <svg class="arrows">
-        <path class="a1" d="M0 0 L30 32 L60 0"></path>
-        <path class="a2" d="M0 20 L30 52 L60 20"></path>
-        <path class="a3" d="M0 40 L30 72 L60 40"></path>
-    </svg>
+    <p>Call to action 001 Réf: CTC-001</p>
+    <div class="btn-arrow-hvr-white">
+        <a href="/">Plans de maisons</a>
+       </div>
+       
+       <div class="btn-arrow-hvr-c1">
+        <a href="/">Plans de maisons</a>
+       </div>
 </body>
 </html>
