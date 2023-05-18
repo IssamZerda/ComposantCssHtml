@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Down Réf: SCD-002</title>
+    <style>
+       body {
+  background: #464646;
+} 
+.scroll-next {
+    right: 110px;
+    bottom: 70px;
+    z-index: 5;
+    opacity: .6;
+    outline-color: #fff;
+}
+.scroll-next .scroll-downicon {
+    background: url(https://www.hcltech.com/sites/default/files/images/campaign-images/cloud-page-revamp/scroll-arrow.svg) no-repeat;
+    width: 13px;
+    height: 19px;
+    display: inline-block;
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.scroll-next::after {
+    content: "";
+    background: #fff;
+    width: 2px;
+    height: 4px;
+    display: inline-block;
+    position: absolute;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    animation: up-down 1s ease-in-out infinite alternate-reverse both;
+}
+.scroll-next {
+    width: 26px;
+    height: 38px;
+    border: 2px solid #fff;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 10px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+}
+
+    </style>
+</head>
+<body> 
+    <p>Scroll Down 002 Réf: SCD-002 </p>
+    <a aria-label="Latest News" class="scroll-next scroll-to-id text-hide" href="#latest-news">Latest News<span class="scroll-downicon">&nbsp;</span></a>
+            
+</body>
+</html>
