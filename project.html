@@ -376,7 +376,7 @@
   jQuery('.left').mousedown(function (event) {
 	var target = jQuery("#timeline_slider");
 	var current_x = target.scrollLeft();
-  
+  console.log("test");
 	if (target.length) {
 	  event.preventDefault();
 	  jQuery(target).animate({
