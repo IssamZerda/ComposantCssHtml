@@ -353,23 +353,23 @@
 	// Arrow Movement
 var interval;
 
-jQuery('.left').mousedown(function(event) {
-        var target = jQuery("#timeline_slider");
+$('.left').mousedown(function(event) {
+        var target = $("#timeline_slider");
         var current_x = target.scrollLeft();
 
         if (target.length) {
             event.preventDefault();
-            jQuery(target).animate({
+            $(target).animate({
                 scrollLeft: current_x - 100
             }, 100, "linear");
         }
         interval = setInterval(function() {
-            var target = jQuery("#timeline_slider");
+            var target = $("#timeline_slider");
             var current_x = target.scrollLeft();
 
             if (target.length) {
                 event.preventDefault();
-                jQuery(target).animate({
+                $(target).animate({
                     scrollLeft: current_x - 100
                 }, 100, "linear");
             }
@@ -379,23 +379,23 @@ jQuery('.left').mousedown(function(event) {
         clearInterval(interval);
     });
 
-jQuery('.right').mousedown(function(event) {
-        var target = jQuery("#timeline_slider");
+$('.right').mousedown(function(event) {
+        var target = $("#timeline_slider");
         var current_x = target.scrollLeft();
 
         if (target.length) {
             event.preventDefault();
-            jQuery(target).animate({
+            $(target).animate({
                 scrollLeft: current_x + 100
             }, 100, "linear");
         }
         interval = setInterval(function() {
-            var target = jQuery("#timeline_slider");
+            var target = $("#timeline_slider");
             var current_x = target.scrollLeft();
 
             if (target.length) {
                 event.preventDefault();
-                jQuery(target).animate({
+                $(target).animate({
                     scrollLeft: current_x + 100
                 }, 100, "linear");
             }
