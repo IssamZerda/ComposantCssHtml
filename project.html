@@ -1,459 +1,480 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Project</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"      rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"> 
-    <style> 
-	 body, html {
-     font-size:16.5px;
-     scroll-behavior: smooth;
-     position: relative;
-     background:#2D5772;
-     font-family: "basic-sans", sans-serif;
-     overflow-x:hidden;
-} 
-.timeline_wrap {
-    overflow:hidden;
-}
-#timeline_slider {
-    display:flex;
-     overflow-x:scroll;
-     padding-bottom:20px;
-      transform:translatey(20px)
-}
-.timeline {
-    width:2px;
-     position:absolute;
-     background:white;
-     height:100%;
-     left:50%;
-}
- .timeline_line {
-     position:absolute;
-     max-width:90%;
-     right:0;
-     height:2px;
-     top:118px;
-     background:white;
-     width:100%;
-}
- .timeline_slide {
-    min-width:300px;
-     opacity:1;
-     max-width:10px;
-     cursor:grab;
-}
- .timeline_fadebox {
-     position:absolute;
-     background: rgb(0,0,0);
-     background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(78,106,82,1) 100%);
-     z-index:9999;
-     width:10%;
-     height:100%;
-     left:0;
-     top:0;
-}
- .timeline_nav {
-     margin:auto;
-     position:absolute;
-     right:10%;
-     z-index:99999;
-     top:115px;
-     width:fit-content;
-}
- .timeline_nav button span {
-/*  Keep the user from selecting the chevrons. You could just use an image instead of an icon instead.   */
-    pointer-events:none;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none; 
-       -moz-user-select: none; 
-        -ms-user-select: none; 
-            user-select: none; 
-     border-radius:100%;
-      pointer-events:none;
-     border:2px solid white;
-     font-size:40px;
-       color:white;
-}
-
- .blueback {
-    background:#2D5772;
-}
- .timeline_nav button {
-    background:transparent;
-     border:none;
-
-}
-
- .timeline_nav button:hover {
-    transform:scale(1.1)
-}
-/* Overlay in case you want to add a background image */
- .green_overlay {
-    background:rgba(78,106,82, .95);
-}
-
- .timeline_dot {
-     background:rgb(78,106,82);
-     width:20px;
-     height:20px;
-     border:2px solid #E7C568;
-     border-radius:100%;
-     padding:5px;
-     margin:10px auto;
-}
- .timeline_dot_center {
-    width:100%;
-     height:100%;
-     border-radius:100%;
-     background:white;
-}
- .timeline_item_content {
-    border:1px solid rgba(255,255,255,.8);
-     border-radius:20px;
-     padding:15px;
-     background:rgba(255,255,255,.1)
-}
-
-
- .yellow {
-    color:#E7C568;
-}
-
- @media only screen and (max-width:1200px) {
-     .timeline_nav {
-        width:90%;
-         z-index:999999;
-         left:5%;
-         display:flex;
-         justify-content:space-between;
-    }
-}
- @media only screen and (max-width:768px) {
-     .timeline_line {
-        min-width:100%;
-         background: rgb(255,255,255);
-         background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
-    }
-     .timeline_nav span {
-        background:transparent;
-    }
-}
- @media only screen and (min-width:768px) {
-     #timeline_slider {
-        padding-left:10%;
-    }
-     .timeline_left_line {
-        width:2px;
-         background:white;
-         left:10%;
-         height:118px;
-         position:absolute;
-         top:0;
-    }
-     .timeline_header {
-        position:relative;
-         width:fit-content;
-         padding:0 20px;
-         margin-left:10%
-    }
-     .timeline_top {
-        max-width:90%;
-         overflow:hidden;
-         padding:100px 0;
-         margin-left:auto;
-    }
-     .tl_line {
-        position:absolute;
-         background:white;
-    }
-     .tl_line_mid {
-         width:100%;
-         height:2px;
-         top:50%;
-    }
-     .tl_line_left {
-         width:2px;
-         height:400px;
-         left:0;
-         top:50%;
-         z-index:900000;
-    }
-}
- 
-    </style>
-</head>
-<body>
+<!DOCTYPE html><html lang="en"><head>
+	<meta charset="UTF-8">
+	
+  
+	  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  
+	  <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+	  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+	  <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  
+  
+  
+	
+	<title>CodePen - Grab &amp; Move Timeline Slider</title>
+	  <link rel="canonical" href="https://codepen.io/ahoidahl/pen/yLxNZZp">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+	
+  <style>
+  body, html {
+	   font-size:16.5px;
+	   scroll-behavior: smooth;
+	   position: relative;
+	   background:#2D5772;
+	   font-family: "basic-sans", sans-serif;
+	   overflow-x:hidden;
+  } 
+  .timeline_wrap {
+	  overflow:hidden;
+  }
+  #timeline_slider {
+	  display:flex;
+	   overflow-x:scroll;
+	   padding-bottom:20px;
+		transform:translatey(20px)
+  }
+  .timeline {
+	  width:2px;
+	   position:absolute;
+	   background:white;
+	   height:100%;
+	   left:50%;
+  }
+   .timeline_line {
+	   position:absolute;
+	   max-width:90%;
+	   right:0;
+	   height:2px;
+	   top:118px;
+	   background:white;
+	   width:100%;
+  }
+   .timeline_slide {
+	  min-width:300px;
+	   opacity:1;
+	   max-width:10px;
+	   cursor:grab;
+  }
+   .timeline_fadebox {
+	   position:absolute;
+	   background: rgb(0,0,0);
+	   background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(78,106,82,1) 100%);
+	   z-index:9999;
+	   width:10%;
+	   height:100%;
+	   left:0;
+	   top:0;
+  }
+   .timeline_nav {
+	   margin:auto;
+	   position:absolute;
+	   right:10%;
+	   z-index:99999;
+	   top:115px;
+	   width:fit-content;
+  }
+   .timeline_nav button span {
+  /*  Keep the user from selecting the chevrons. You could just use an image instead of an icon instead.   */
+	  pointer-events:none;
+	-webkit-touch-callout: none;
+	  -webkit-user-select: none; 
+		 -moz-user-select: none; 
+		  -ms-user-select: none; 
+			  user-select: none; 
+	   border-radius:100%;
+		pointer-events:none;
+	   border:2px solid white;
+	   font-size:40px;
+		 color:white;
+  }
+  
+   .blueback {
+	  background:#2D5772;
+  }
+   .timeline_nav button {
+	  background:transparent;
+	   border:none;
+  
+  }
+  
+   .timeline_nav button:hover {
+	  transform:scale(1.1)
+  }
+  /* Overlay in case you want to add a background image */
+   .green_overlay {
+	  background:rgba(78,106,82, .95);
+  }
+  
+   .timeline_dot {
+	   background:rgb(78,106,82);
+	   width:20px;
+	   height:20px;
+	   border:2px solid #E7C568;
+	   border-radius:100%;
+	   padding:5px;
+	   margin:10px auto;
+  }
+   .timeline_dot_center {
+	  width:100%;
+	   height:100%;
+	   border-radius:100%;
+	   background:white;
+  }
+   .timeline_item_content {
+	  border:1px solid rgba(255,255,255,.8);
+	   border-radius:20px;
+	   padding:15px;
+	   background:rgba(255,255,255,.1)
+  }
+  
+  
+   .yellow {
+	  color:#E7C568;
+  }
+  
+   @media only screen and (max-width:1200px) {
+	   .timeline_nav {
+		  width:90%;
+		   z-index:999999;
+		   left:5%;
+		   display:flex;
+		   justify-content:space-between;
+	  }
+  }
+   @media only screen and (max-width:768px) {
+	   .timeline_line {
+		  min-width:100%;
+		   background: rgb(255,255,255);
+		   background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 90%, rgba(255,255,255,0) 100%);
+	  }
+	   .timeline_nav span {
+		  background:transparent;
+	  }
+  }
+   @media only screen and (min-width:768px) {
+	   #timeline_slider {
+		  padding-left:10%;
+	  }
+	   .timeline_left_line {
+		  width:2px;
+		   background:white;
+		   left:10%;
+		   height:118px;
+		   position:absolute;
+		   top:0;
+	  }
+	   .timeline_header {
+		  position:relative;
+		   width:fit-content;
+		   padding:0 20px;
+		   margin-left:10%
+	  }
+	   .timeline_top {
+		  max-width:90%;
+		   overflow:hidden;
+		   padding:100px 0;
+		   margin-left:auto;
+	  }
+	   .tl_line {
+		  position:absolute;
+		   background:white;
+	  }
+	   .tl_line_mid {
+		   width:100%;
+		   height:2px;
+		   top:50%;
+	  }
+	   .tl_line_left {
+		   width:2px;
+		   height:400px;
+		   left:0;
+		   top:50%;
+		   z-index:900000;
+	  }
+  }
+  </style>
+  
+	<script>
+	window.console = window.console || function(t) {};
+  </script>
+  
+	
+	
+  </head>
+  
+  <body translate="no">
 	<section id="timeline">
-		<div class="timeline_top text-light position-relative">
-		   <p class="decorative_word bold text-light text-uppercase d-none d-md-flex timeline_word">
-		   </p>
-		   <div class="tl_line tl_line_left" aria-hidden="true">
-		   </div>
-		   <div class="tl_line tl_line_mid" aria-hidden="true">
-		   </div>
-		   <h2 class="h1 yellowspan text-center text-md-left text-uppercase timeline_header blueback">
-			  Fancy Timeline, Bro
-		   </h2>
-		   <div class="timeline_nav">
-			  <button aria-label="timeline navigation previous" class="transition-fast timeline_nav_prev left">
-			  <span class="blueback  material-symbols-outlined material-icons">
-			  chevron_left
-			  </span>
-			  </button>
-			  <button aria-label="timeline navigation next" class="transition-fast timeline_nav_next right">
-			  <span class="blueback  material-symbols-outlined material-icons">
-			  chevron_right
-			  </span>
-			  </button>
-		   </div>
+	 <div class="timeline_top text-light position-relative">
+		<p class="decorative_word bold text-light text-uppercase d-none d-md-flex timeline_word">
+		</p>
+		<div class="tl_line tl_line_left" aria-hidden="true">
 		</div>
-		<div class="timeline_bottom bg-cover" style="background-image:url(<?php echo get_field('timeline_background');?>)">
-		   <div class="green_overlay pb-md-5">
-			  <div class="py-5 timeline_content position-relative">
-				 <div class="timeline_fadebox d-none d-md-block" aria-hidden="true">
+		<div class="tl_line tl_line_mid" aria-hidden="true">
+		</div>
+		<h2 class="h1 yellowspan text-center text-md-left text-uppercase timeline_header blueback">
+		   Fancy Timeline, Bro
+		</h2>
+		<div class="timeline_nav">
+		   <button aria-label="timeline navigation previous" class="transition-fast timeline_nav_prev left">
+		   <span class="blueback  material-symbols-outlined material-icons">
+		   chevron_left
+		   </span>
+		   </button>
+		   <button aria-label="timeline navigation next" class="transition-fast timeline_nav_next right">
+		   <span class="blueback  material-symbols-outlined material-icons">
+		   chevron_right
+		   </span>
+		   </button>
+		</div>
+	 </div>
+	 <div class="timeline_bottom bg-cover" style="background-image:url(<?php echo get_field('timeline_background');?>)">
+		<div class="green_overlay pb-md-5">
+		   <div class="py-5 timeline_content position-relative">
+			  <div class="timeline_fadebox d-none d-md-block" aria-hidden="true">
+			  </div>
+			  <div class="timeline_wrap">
+				 <div class="timeline_left_line" aria-hidden="true">
 				 </div>
-				 <div class="timeline_wrap">
-					<div class="timeline_left_line" aria-hidden="true">
+				 <div class="timeline_line" aria-hidden="true">
+				 </div>
+				 <div id="timeline_slider">
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  1990
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  I was born extremily young for someone my age. My birth has generally been regarded as a mistake.
+					   </p>
 					</div>
-					<div class="timeline_line" aria-hidden="true">
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  1993
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  My parents divorce. My mom says it's my fault.
+					   </p>
 					</div>
-					<div id="timeline_slider">
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 1990
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  1995
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
 						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 I was born extremily young for someone my age. My birth has generally been regarded as a mistake.
-						  </p>
 					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 1993
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 My parents divorce. My mom says it's my fault.
-						  </p>
-					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 1995
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 My mom sobers up and realizes I'm not a house cat. I taste human food for the first time.
-						  </p>
-					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 2000
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 All computers crash and planes fall from the sky. Y2K is upon us.  God have mercy on our souls.
-						  </p>
-					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 2000.1
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 nvm that didn't happen
-						  </p>
-					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 2008
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 I turn 18. I am now an adult. The world is at my fingertips and nothing can stop me. 
-						  </p>
-					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 2009
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 nvm that didn't happen either.
-						  </p>
-					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 2012
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 Nothing particularly interesting happens.
-						  </p>
-					   </div>
-					   <!--------------------------------------->
-					   <div class="timeline_slide px-4">
-						  <p class="yellow timeline_date text-center m-0 h4">
-							 2023
-						  </p>
-						  <div class="timeline_dot flex-center" aria-hidden="true">
-							 <div class="timeline_dot_center">
-							 </div>
-						  </div>
-						  <p class="timeline_item_content text-light mt-3">
-							 I make a timeline with fun grab sliding and you come here to see it.
-						  </p>
-					   </div>
-					   <!--------------------------------------->
+					   <p class="timeline_item_content text-light mt-3">
+						  My mom sobers up and realizes I'm not a house cat. I taste human food for the first time.
+					   </p>
 					</div>
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  2000
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  All computers crash and planes fall from the sky. Y2K is upon us.  God have mercy on our souls.
+					   </p>
+					</div>
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  2000.1
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  nvm that didn't happen
+					   </p>
+					</div>
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  2008
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  I turn 18. I am now an adult. The world is at my fingertips and nothing can stop me. 
+					   </p>
+					</div>
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  2009
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  nvm that didn't happen either.
+					   </p>
+					</div>
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  2012
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  Nothing particularly interesting happens.
+					   </p>
+					</div>
+					<!--------------------------------------->
+					<div class="timeline_slide px-4">
+					   <p class="yellow timeline_date text-center m-0 h4">
+						  2023
+					   </p>
+					   <div class="timeline_dot flex-center" aria-hidden="true">
+						  <div class="timeline_dot_center">
+						  </div>
+					   </div>
+					   <p class="timeline_item_content text-light mt-3">
+						  I make a timeline with fun grab sliding and you come here to see it.
+					   </p>
+					</div>
+					<!--------------------------------------->
 				 </div>
 			  </div>
 		   </div>
 		</div>
-	 </section>
-	 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-	 <script id="rendered-js">
-		// Arrow Movement
-		var interval;
-		
-		jQuery('.left').mousedown(function (event) {
-		  var target = jQuery("#timeline_slider");
-		  var current_x = target.scrollLeft();
-		
-		  if (target.length) {
-			event.preventDefault();
-			jQuery(target).animate({
-			  scrollLeft: current_x - 100 },
-			100, "linear");
-		  }
-		  interval = setInterval(function () {
-			var target = jQuery("#timeline_slider");
-			var current_x = target.scrollLeft();
-		
-			if (target.length) {
-			  event.preventDefault();
-			  jQuery(target).animate({
-				scrollLeft: current_x - 100 },
-			  100, "linear");
-			}
-		  }, 100);
-		}).
-		mouseup(function () {
-		  clearInterval(interval);
-		});
-		
-		jQuery('.right').mousedown(function (event) {
-		  var target = jQuery("#timeline_slider");
-		  var current_x = target.scrollLeft();
-		
-		  if (target.length) {
-			event.preventDefault();
-			jQuery(target).animate({
-			  scrollLeft: current_x + 100 },
-			100, "linear");
-		  }
-		  interval = setInterval(function () {
-			var target = jQuery("#timeline_slider");
-			var current_x = target.scrollLeft();
-		
-			if (target.length) {
-			  event.preventDefault();
-			  jQuery(target).animate({
-				scrollLeft: current_x + 100 },
-			  100, "linear");
-			}
-		  }, 100);
-		}).
-		mouseup(function () {
-		  clearInterval(interval);
-		});
-		
-		// Grab and Move
-		const container = document.querySelector('#timeline_slider');
-		
-		let startY;
-		let startX;
-		let scrollLeft;
-		let scrollTop;
-		let isDown;
-		
-		container.addEventListener('mousedown', e => mouseIsDown(e));
-		container.addEventListener('mouseup', e => mouseUp(e));
-		container.addEventListener('mouseleave', e => mouseLeave(e));
-		container.addEventListener('mousemove', e => mouseMove(e));
-		
-		function mouseIsDown(e) {
-		  isDown = true;
-		  startY = e.pageY - container.offsetTop;
-		  startX = e.pageX - container.offsetLeft;
-		  scrollLeft = container.scrollLeft;
-		  scrollTop = container.scrollTop;
-		}
-		
-		function mouseUp(e) {
-		  isDown = false;
-		}
-		
-		function mouseLeave(e) {
-		  isDown = false;
-		}
-		
-		function mouseMove(e) {
-		  if (isDown) {
-			e.preventDefault();
-			//Move vertcally
-			const y = e.pageY - container.offsetTop;
-			const walkY = y - startY;
-			container.scrollTop = scrollTop - walkY;
-		
-			//Move Horizontally
-			const x = e.pageX - container.offsetLeft;
-			const walkX = x - startX;
-			container.scrollLeft = scrollLeft - walkX;
-		
-		  }
-		}
-		//# sourceURL=pen.js
-		</script>
- 
-
-</body>
-</html>
+	 </div>
+  </section>
+	  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script id="rendered-js">
+  // Arrow Movement
+  var interval;
+  
+  jQuery('.left').mousedown(function (event) {
+	var target = jQuery("#timeline_slider");
+	var current_x = target.scrollLeft();
+  
+	if (target.length) {
+	  event.preventDefault();
+	  jQuery(target).animate({
+		scrollLeft: current_x - 100 },
+	  100, "linear");
+	}
+	interval = setInterval(function () {
+	  var target = jQuery("#timeline_slider");
+	  var current_x = target.scrollLeft();
+  
+	  if (target.length) {
+		event.preventDefault();
+		jQuery(target).animate({
+		  scrollLeft: current_x - 100 },
+		100, "linear");
+	  }
+	}, 100);
+  }).
+  mouseup(function () {
+	clearInterval(interval);
+  });
+  
+  jQuery('.right').mousedown(function (event) {
+	var target = jQuery("#timeline_slider");
+	var current_x = target.scrollLeft();
+  
+	if (target.length) {
+	  event.preventDefault();
+	  jQuery(target).animate({
+		scrollLeft: current_x + 100 },
+	  100, "linear");
+	}
+	interval = setInterval(function () {
+	  var target = jQuery("#timeline_slider");
+	  var current_x = target.scrollLeft();
+  
+	  if (target.length) {
+		event.preventDefault();
+		jQuery(target).animate({
+		  scrollLeft: current_x + 100 },
+		100, "linear");
+	  }
+	}, 100);
+  }).
+  mouseup(function () {
+	clearInterval(interval);
+  });
+  
+  // Grab and Move
+  const container = document.querySelector('#timeline_slider');
+  
+  let startY;
+  let startX;
+  let scrollLeft;
+  let scrollTop;
+  let isDown;
+  
+  container.addEventListener('mousedown', e => mouseIsDown(e));
+  container.addEventListener('mouseup', e => mouseUp(e));
+  container.addEventListener('mouseleave', e => mouseLeave(e));
+  container.addEventListener('mousemove', e => mouseMove(e));
+  
+  function mouseIsDown(e) {
+	isDown = true;
+	startY = e.pageY - container.offsetTop;
+	startX = e.pageX - container.offsetLeft;
+	scrollLeft = container.scrollLeft;
+	scrollTop = container.scrollTop;
+  }
+  
+  function mouseUp(e) {
+	isDown = false;
+  }
+  
+  function mouseLeave(e) {
+	isDown = false;
+  }
+  
+  function mouseMove(e) {
+	if (isDown) {
+	  e.preventDefault();
+	  //Move vertcally
+	  const y = e.pageY - container.offsetTop;
+	  const walkY = y - startY;
+	  container.scrollTop = scrollTop - walkY;
+  
+	  //Move Horizontally
+	  const x = e.pageX - container.offsetLeft;
+	  const walkX = x - startX;
+	  container.scrollLeft = scrollLeft - walkX;
+  
+	}
+  }
+  //# sourceURL=pen.js
+	  </script>
+  
+	
+  
+  
+  
+  </body></html>
