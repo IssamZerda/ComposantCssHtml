@@ -372,7 +372,7 @@
 		<script id="rendered-js">
   // Arrow Movement
   var interval;
-  
+  jQuery( document ).ready(function() {
   jQuery('.left').mousedown(function (event) {
 	var target = jQuery("#timeline_slider");
 	var current_x = target.scrollLeft();
@@ -424,6 +424,7 @@
   mouseup(function () {
 	clearInterval(interval);
   });
+});
   
   // Grab and Move
   const container = document.querySelector('#timeline_slider');
